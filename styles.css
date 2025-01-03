@@ -45,7 +45,6 @@ body {
   align-items: center;
   margin-top: -50px;
 }
-
 #burner-flame {
   width: 80px;
   height: 80px;
@@ -55,9 +54,9 @@ body {
   margin-bottom: 10px;
   margin-left: 119px;
   display: none;
-}
-
-.flame {
+  }
+  
+  .flame {
   position: absolute;
   /* display: none; */
   bottom: -63px;
@@ -67,21 +66,21 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 165, 0, 1) 50%, rgba(255, 69, 0, 1) 90%);
   animation: flicker 3s infinite alternate;
-}
-
-.small-flame {
+  }
+  
+  .small-flame {
   width: 30px;
   height: 10px;
   background: radial-gradient(circle, rgba(255, 215, 0, 1) 50%, rgba(255, 69, 0, 1) 90%);
   animation-duration: 3s;
-}
-
-.large-flame {
+  }
+  
+  .large-flame {
   width: 55px;
   height: 16px;
   animation-duration: 3s;
   /* display: none; */
-}
+  }
 
 @keyframes flicker {
   0% {

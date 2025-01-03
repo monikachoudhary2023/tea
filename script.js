@@ -1,21 +1,33 @@
-const toggleCheckbox = document.getElementById('switch');
 
-const contentOne = document.getElementById('burner_flame');
+const regulators = document.querySelectorAll('.regulator');
 
- let CheckboxOn = false
+        regulators.forEach((regulator) => {
+            regulator.addEventListener('click', () => {
+                const burnerIndex = regulator.dataset.burner - 1;
+                const flame = document.querySelectorAll('.flame')[burnerIndex];
 
-toggleCheckbox.addEventListener('change', () => {
+                
+                let currentRotation = regulator.style.transform || 'rotate(0deg)';
 
-  if (toggleCheckbox.checked) {
+              
+                if (currentRotation === 'rotate(0deg)') {
+                    currentRotation = 'rotate(45deg)'; 
+                    flame.style.display = 'block';
+                    flame.style.height = '30px'; 
+                } else if (currentRotation === 'rotate(45deg)') {
+                    currentRotation = 'rotate(90deg)'; 
+                    flame.style.display = 'block';
+                    flame.style.height = '50px'; 
+                } 
+                else if (currentRotation === 'rotate(90deg)') {
+                    currentRotation = 'rotate(135deg)'; 
+                    flame.style.display = 'block';
+                    flame.style.height = '70px'; }
+                    else {
+                    currentRotation = 'rotate(0deg)'; 
+                    flame.style.display = 'none'; 
+                }
 
-    contentOne.style.display = 'block';
-   
-    
-
-  } else {
-
-    contentOne.style.display = 'none';
-
-
-  }
-});
+                regulator.style.transform = currentRotation;
+            });
+        });
